@@ -30,7 +30,6 @@ public:
 };
 
 class Expr::And : public Expr {
-  // Add code here for Expr::And
   std::unique_ptr<Expr> left;
   std::unique_ptr<Expr> right;
 
@@ -44,7 +43,6 @@ public:
 };
 
 class Expr::Var : public Expr {
-  // Add code here for Expr::Var
   std::string name;
 
 public:

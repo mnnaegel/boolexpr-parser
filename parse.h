@@ -52,7 +52,6 @@ std::unique_ptr<Expr> Or(const std::string &input, size_t &curr) {
 }
 
 std::unique_ptr<Expr> And(const std::string &input, size_t &curr) {
-  // Add here code for And rule
   auto left = oneOf(input, curr, Functions{Var});
   matchOne(input, curr, "&");
   auto right = oneOf(input, curr, Functions{Or, And, Var});
@@ -61,7 +60,6 @@ std::unique_ptr<Expr> And(const std::string &input, size_t &curr) {
 }
 
 std::unique_ptr<Expr> Var(const std::string &input, size_t &curr) {
-  // Add here code for Var rule
   std::string name;
   while (curr < input.size() && isalpha(input[curr])) {
     name += input[curr];
